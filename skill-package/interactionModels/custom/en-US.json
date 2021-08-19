@@ -1,0 +1,93 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "my notes",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "NoteIntent",
+                    "slots": [
+                        {
+                            "name": "NOTE",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "note this {NOTE}",
+                        "jot this down {NOTE}",
+                        "make a note that {NOTE}",
+                        "take a note {NOTE}",
+                        "jot down {NOTE}",
+                        "make a note {NOTE}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "ReadNote",
+                    "slots": [],
+                    "samples": [
+                        "read note",
+                        "read that last one",
+                        "repeat that last one",
+                        "repeat my last note",
+                        "last note",
+                        "read the last note"
+                    ]
+                },
+                {
+                    "name": "DeleteNote",
+                    "slots": [],
+                    "samples": [
+                        "please delete that",
+                        "delete that",
+                        "remove note",
+                        "delete that last note",
+                        "delete note",
+                        "delete last note"
+                    ]
+                },
+                {
+                    "name": "DeleteAllNotes",
+                    "slots": [],
+                    "samples": [
+                        "delete memos for today",
+                        "remove recorded notes for today",
+                        "remove notes made today",
+                        "remove all notes",
+                        "remove notes",
+                        "delete notes",
+                        "delete all notes for today",
+                        "delete all notes"
+                    ]
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": []
+                }
+            ],
+            "types": []
+        }
+    }
+}

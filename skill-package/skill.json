@@ -1,0 +1,48 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "interfaces": []
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "containsAds": false,
+      "isChildDirected": false,
+      "isExportCompliant": true,
+      "isAlexaShoppingActionsEnabled": true,
+      "locales": {
+        "en-US": {}
+      },
+      "usesPersonalInfo": false
+    },
+    "publishingInformation": {
+      "automaticDistribution": {
+        "isActive": false
+      },
+      "category": "TO_DO_LISTS_AND_NOTES",
+      "distributionCountries": [
+        "US"
+      ],
+      "distributionMode": "PRIVATE",
+      "isAvailableWorldwide": false,
+      "locales": {
+        "en-US": {
+          "description": "My Notes lets you jot done quick notes, just say \"Alexa, ask my notes to take a note\" followed by what you want to note. You can also ask to delete all of your notes or read off your last note.",
+          "examplePhrases": [
+            "Alexa ask my notes to take a note",
+            "hello",
+            "help"
+          ],
+          "keywords": [],
+          "largeIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/176f/0e8bcef39faa424e9a9b4e381e00d82c/APP_ICON_LARGE?versionId=.ZGAY93JUryU.wcQelVNS2ETY43IDaTy&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20210726T215035Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIAWBV6LQ4QMBDMF43H%2F20210726%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=6fa3c5987fea40cb7b1cf940b5bfdbe666865dbae6e1f097e17c3d0cd0926ae0",
+          "name": "My Notes",
+          "smallIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/8bc3/c43937867b7c4c83ba97a5aa2eba9307/APP_ICON?versionId=qhnbdq0V4keYTE15UzcXDToy9huYzdNB&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20210726T215035Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIAWBV6LQ4QMBDMF43H%2F20210726%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=61ad4f42180aa990e9eaf69eb9b0ac5230845c052bf00396c44de00dabebe31e",
+          "summary": "Simple skill to take notes, read recent notes, and delete notes."
+        }
+      },
+      "testingInstructions": "Sample Testing Instructions."
+    }
+  }
+}

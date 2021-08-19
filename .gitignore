@@ -1,3 +1,13 @@
+#From Alexa Hosted CLI Creation
+skill/lambda/node_modules
+.ask/
+
+# Don't commit any local persistence files
+lambda/local_persistence_bucket/
+
+# Package lock
+*/package-lock.json
+
 # Logs
 logs
 *.log
@@ -40,6 +50,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+webapp/node_modules/
 
 # TypeScript v1 declaration files
 typings/
@@ -102,3 +113,5 @@ dist
 
 # TernJS port file
 .tern-port
+.DS_Store
+lambda/.eslintrc
