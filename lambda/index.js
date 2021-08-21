@@ -15,7 +15,7 @@ const languageStrings = {
     //  'en-CA': require('languages\en-CA.js'),
     //  'en-GB': require('languages\en-GB.js'),
     //  'en-IN': require('languages\en-IN.js'),
-    'en-US': require('languages\en-US.js'),
+    'en-US': require('languages/en-US.js'),
     //  'es' : require('languages\es.js'),
     //  'es-ES': require('languages\es-ES.js'),
     //  'es-MX': require('languages\es-MX.js'),
@@ -63,18 +63,13 @@ const LocalizationInterceptor = {
 
 const LogRequestInterceptor = {
 	process(handlerInput) {
-        if (debug) {
-            console.log(`REQUEST ENVELOPE = ${JSON.stringify(handlerInput.requestEnvelope)}`
-            );
-        }
+        console.log(`REQUEST ENVELOPE = ${JSON.stringify(handlerInput.requestEnvelope)}`);
 	}
 };
 
 const LoggingResponseInterceptor = {
     process(handlerInput, response) {
-      if (debug) {
         console.log(`RESPONSE ENVELOPE = ${JSON.stringify(response)}`);
-      }
     }
 };
 

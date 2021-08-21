@@ -44,15 +44,21 @@ module.exports = {
      * @param {Object} handlerInput 
      */
     saveNote(handlerInput) {
-        let { attributesManager } = handlerInput;
+        let { attributesManager, requestEnvelope } = handlerInput;
         let sessionAttributes = attributesManager.getSessionAttributes();
-        let key = new Date().toISOString();
+        let notes = sessionAttributes[constants.NOTES];
 
-        if(sessionAttributes[constants.NOTES].length > 0) {
+        if(notes && notes.length > 0) {
+            let user = requestEnvelope.session.user.userId;
+            user = user.replace(/amzn1.ask.account./g,'');
+            let key = `${new Date().toISOString()}_${user}.txt`;
+            let document = notes.join('\n');
+
             const params = {
                 Bucket: bucketName, 
                 Key: key, 
-                Body: sessionAttributes[constants.NOTES].join('\n')
+                Body: document,
+                StorageClass: "STANDARD"
             };
             
             s3Client.putObject(params, function(err, data) {
@@ -106,7 +112,7 @@ module.exports = {
      * @param {Object} handlerInput 
      */
     deleteAllNotes(handlerInput) {
-        let { attributesManager } = handlerInput;
+        let { attributesManager, requestEnvelope } = handlerInput;
         let sessionAttributes = attributesManager.getSessionAttributes();
         sessionAttributes[constants.NOTES] = [];
 
@@ -116,11 +122,16 @@ module.exports = {
             if (err) console.log(err, err.stack); 
             else {
                 const notesRaw = data.Contents; 
+                let user = requestEnvelope.session.user.userId;
+                user = user.replace(/amzn1.ask.account./g,'');
 
                 let notes = [];
-                console.info("DELETE: ", data);
                 if(notesRaw.length > 0) {
-                    notesRaw.forEach(note => notes.push({"Key": note.Key}));
+                    notesRaw.forEach(note => {
+                        if(note.Key.includes(user)) {
+                            notes.push({"Key": note.Key})
+                        } 
+                    });
         
                     const params = {
                         Bucket: bucketName, 
